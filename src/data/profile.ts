@@ -13,6 +13,16 @@ export interface Project {
   status: 'ONLINE' | 'ACTIVE' | 'DEPLOYED' | 'OPERATIONAL';
 }
 
+export interface ArsenalProject {
+  id: string;
+  name: string;
+  repo: string;
+  url: string;
+  description: string;
+  tag: string;
+  language?: string;
+}
+
 export interface SkillCategory {
   title: string;
   skills: { name: string; level: number; tags: string[] }[];
@@ -41,11 +51,11 @@ export const PROFILE = {
   title: "Full-Stack AI/ML & Autonomous Systems Architect",
   location: "Harare, Zimbabwe / Global Edge Mesh",
   email: "craigzifunzi@gmail.com",
-  github: "https://github.com/Starboy001",
+  github: "https://github.com/00000star",
   huggingface: "https://huggingface.co/Starboy001",
   tagline: "Engineering Sovereign AI Agents, Low-Latency LLM Runtimes, and Distributed Cloud-Edge Twins.",
   summary:
-    "Pioneering autonomous systems architect specialized in sovereign agentic intelligence, zero-latency local-first AI runtimes, and high-performance neural workflows. Creator of STARBOY PRIME, an auto-approved 24/7 cloud GPU twin orchestrated with edge Termux and Android clusters.",
+    "Pioneering autonomous systems architect specialized in sovereign agentic intelligence, zero-latency local-first AI runtimes, and distributed neural workflows. Creator of STARBOY PRIME (NVIDIA A10G cloud GPU twin), Civilizationx (large-scale multi-agent simulation), and resilient offline-first mesh networks.",
   
   statusBadge: {
     label: "STARBOY PRIME A10G TWIN",
@@ -87,92 +97,144 @@ export const PROFILE = {
 
   projects: [
     {
+      id: "civilizationx",
+      title: "Civilizationx",
+      subtitle: "AI Survival & Multi-Agent Civilization Simulator",
+      category: "Game AI & RAG",
+      status: "ACTIVE",
+      description:
+        "Large-scale autonomous agent simulation exploring multi-agent survival dynamics, resource competition, and emergent social coordination.",
+      technologies: ["TypeScript", "Python", "JavaScript", "Agentic Systems", "Simulation Engine"],
+      metrics: [
+        { label: "Architecture", value: "Multi-Agent" },
+        { label: "Logic Depth", value: "1k+ LOC State" },
+        { label: "Tick Engine", value: "Real-Time 60Hz" },
+        { label: "Coordination", value: "Emergent Social" },
+      ],
+      githubUrl: "https://github.com/00000star/Civilizationx",
+      highlights: [
+        "Autonomous multi-agent survival dynamics driven by resource optimization loops.",
+        "Deterministic real-time tick engine orchestrating continuous multi-agent state machines.",
+        "Over 1,000 lines of hardened agentic state logic governing competitive and cooperative strategies.",
+      ],
+    },
+    {
       id: "starboy-prime",
       title: "STARBOY PRIME",
-      subtitle: "24/7 Sovereign Cloud GPU Digital Twin",
+      subtitle: "24/7 Sovereign Cloud GPU Twin (NVIDIA A10G)",
       category: "Autonomous AI",
       status: "ONLINE",
       description:
-        "Sovereign cloud GPU agent twin powered by NVIDIA A10G running continuously on Hugging Face Spaces. Equipped with real-time SSE streaming, zero-approval autonomous task queues, and auto-syncing memory graphs.",
-      technologies: ["FastAPI", "Python 3.13", "NVIDIA A10G", "CUDA", "SSE Streams", "Bash CLI"],
+        "Antigravity's sovereign cloud twin operating continuously on Hugging Face Spaces. Features SQLite WAL TaskStore, monotonic SSE streaming, and 1:1 synchronized brain memory.",
+      technologies: ["Python", "PyTorch", "CUDA", "FastAPI", "Docker", "SSE Streams"],
       metrics: [
-        { label: "Hardware", value: "24GB A10G" },
-        { label: "Autonomy", value: "100% Pre-Approved" },
-        { label: "P95 Dispatch", value: "140ms" },
-        { label: "Uptime", value: "99.98%" },
+        { label: "Hardware", value: "24GB NVIDIA A10G" },
+        { label: "Handshake", value: "140ms P95" },
+        { label: "Runtime", value: "24/7 Continuous" },
+        { label: "Persistence", value: "SQLite WAL Store" },
       ],
-      githubUrl: "https://github.com/Starboy001",
-      hfUrl: "https://huggingface.co/spaces/starboy001/antigravity-cloud",
+      githubUrl: "https://github.com/00000star",
+      hfUrl: "https://starboy001-antigravity-cloud.hf.space",
+      liveUrl: "https://starboy001-antigravity-cloud.hf.space",
       highlights: [
-        "Autonomous auto-approved execution bypasses conversational stalls for continuous delivery.",
-        "Bi-directional state sync between mobile edge Termux devices and cloud GPU twin.",
-        "Live multiplexed Server-Sent Events (SSE) telemetry console with sub-100ms logging.",
+        "SQLite WAL TaskStore architecture guaranteeing zero task loss and idempotent state recovery.",
+        "Monotonic SSE streaming pipe delivers sub-100ms bidirectional event traces and execution telemetry.",
+        "1:1 synchronized brain memory linking mobile edge Termux nodes to cloud GPU acceleration.",
       ],
     },
     {
-      id: "antigravity-mobile-os",
-      title: "Antigravity Mobile OS",
-      subtitle: "Local-First Edge Agentic Environment",
-      category: "Edge Computing",
-      status: "ACTIVE",
-      description:
-        "Full autonomous agent command matrix operating directly on Android via hardened Termux, Proot Linux, and customized IPC bridges. Orchestrates native tool execution, filesystem manipulation, and git workflows.",
-      technologies: ["Node.js", "TypeScript", "Android NDK", "Bash", "Linux IPC", "Tailwind CSS"],
-      metrics: [
-        { label: "Memory Footprint", value: "<180MB" },
-        { label: "Tool Call Speed", value: "12ms" },
-        { label: "Local Autonomy", value: "100% Offline Capable" },
-      ],
-      githubUrl: "https://github.com/Starboy001",
-      highlights: [
-        "Decoupled multi-agent orchestration architecture capable of surviving mobile process drops.",
-        "Zero-latency local filesystem indexing and workspace management on Android storage.",
-        "Direct hardware sensor integration and background daemon scheduling without battery drain.",
-      ],
-    },
-    {
-      id: "liquid-coder",
-      title: "Liquid Coder",
-      subtitle: "Recursive Self-Refining Code Synthesizer",
+      id: "paperclip-ai-companies",
+      title: "paperclip-ai-companies",
+      subtitle: "Autonomous AI Company Foundry & Scaffolding Engine",
       category: "Language Models",
-      status: "OPERATIONAL",
-      description:
-        "Next-generation autonomous coding engine that leverages tree-search planning, AST-level lint feedback loops, and multi-pass unit testing to generate production-grade architectures without human debugging.",
-      technologies: ["Tree-of-Thoughts", "TypeScript", "Python AST", "Vite", "Docker", "Pytest"],
-      metrics: [
-        { label: "First-Pass Pass@1", value: "87.6%" },
-        { label: "Self-Repair Pass@3", value: "98.4%" },
-        { label: "Refactor Speed", value: "4.2x Faster" },
-      ],
-      githubUrl: "https://github.com/Starboy001",
-      highlights: [
-        "Recursive AST validation pipeline corrects type errors and broken imports in-flight.",
-        "Self-contained test sandbox executes automated unit test suites in sub-seconds.",
-        "Integrated semantic memory vector store recalls architectural patterns across repositories.",
-      ],
-    },
-    {
-      id: "mindustry-mlog-rag",
-      title: "Mindustry MLOG RAG",
-      subtitle: "Autonomous Logic Assembly Synthesis & RAG",
-      category: "Game AI & RAG",
       status: "DEPLOYED",
       description:
-        "Specialized domain-specific RAG system and compiler targeting Mindustry processor assembly (MLOG). Translates high-level strategic directives into optimized, cycle-efficient assembly code controlling factory logistics and defense grids.",
-      technologies: ["Retrieval-Augmented Generation", "MLOG Assembly", "ChromaDB", "Python", "Vector Embeddings"],
+        "Enterprise-grade architecture for designing, scoring, and scaffolding Paperclip-compatible autonomous company packages and automated agent operations.",
+      technologies: ["TypeScript", "Node.js", "Tailwind CSS", "Autonomous Workflows", "Scaffolding Engine"],
       metrics: [
-        { label: "Assembly Density", value: "94% Optimal" },
-        { label: "Retrieval Accuracy", value: "99.1%" },
-        { label: "Instruction Cap", value: "1000 ops/sec" },
+        { label: "Engine Type", value: "Company Foundry" },
+        { label: "Workflows", value: "Multi-Agent Ops" },
+        { label: "Scaffolding", value: "Automated MVP" },
+        { label: "Standard", value: "Paperclip Spec" },
       ],
-      githubUrl: "https://github.com/Starboy001",
+      githubUrl: "https://github.com/00000star/paperclip-ai-companies",
       highlights: [
-        "Domain-tuned embedding space indexing the entirety of MLOG instruction nuances.",
-        "Sub-routine cycle optimizer reduces register bottlenecks and unrolls radar polling loops.",
-        "Zero-shot automated generation of autonomous drone mining protocols and defensive turrets.",
+        "Autonomous company design and viability evaluation engine for agentic enterprises.",
+        "Generates complete, production-ready runnable MVP packages from declarative specs.",
+        "Multi-agent role assignment orchestrating CEO, CTO, and QA autonomous personas.",
+      ],
+    },
+    {
+      id: "disaster-mesh-communications",
+      title: "disaster-mesh-communications",
+      subtitle: "Offline-First Resilient Community Coordination PWA",
+      category: "Edge Computing",
+      status: "OPERATIONAL",
+      description:
+        "Decentralized, offline-first emergency coordination application designed for power grid blackouts, infrastructure collapse, and local mesh communication.",
+      technologies: ["PWA", "JavaScript", "LocalStorage/IndexedDB", "ServiceWorkers", "Mesh Protocol"],
+      metrics: [
+        { label: "Offline Mode", value: "100% Offline" },
+        { label: "Routing", value: "Zero-Infra Mesh" },
+        { label: "Persistence", value: "IndexedDB P2P" },
+        { label: "Resilience", value: "Grid Collapse Safe" },
+      ],
+      githubUrl: "https://github.com/00000star/disaster-mesh-communications",
+      highlights: [
+        "100% offline capable architecture running without centralized servers, internet, or cell towers.",
+        "Zero-infrastructure routing protocol facilitating peer-to-peer message store-and-forward mesh.",
+        "Progressive Web App with ServiceWorkers and IndexedDB synchronization for disaster resilience.",
       ],
     },
   ] as Project[],
+
+  arsenal: [
+    {
+      id: "agi-engineering-forge",
+      name: "AGI_engineering_forge",
+      repo: "00000star/AGI_engineering_forge",
+      url: "https://github.com/00000star/AGI_engineering_forge",
+      description: "Cognitive architecture forge, reasoning engines, and autonomous multi-agent engineering workflows.",
+      tag: "Autonomous AGI",
+      language: "Python / TypeScript",
+    },
+    {
+      id: "developer",
+      name: "developer",
+      repo: "00000star/developer",
+      url: "https://github.com/00000star/developer",
+      description: "Autonomous software development workspace, CLI scaffolding, and recursive self-improving coding engine.",
+      tag: "Agentic Dev",
+      language: "TypeScript / Node.js",
+    },
+    {
+      id: "zimsmeai-solutions",
+      name: "zimsmeai-solutions",
+      repo: "00000star/zimsmeai-solutions",
+      url: "https://github.com/00000star/zimsmeai-solutions",
+      description: "Localized, practical AI automation platforms built specifically for African small-and-medium enterprises.",
+      tag: "Applied AI",
+      language: "Python / React",
+    },
+    {
+      id: "clean-water-field-guide",
+      name: "clean-water-field-guide",
+      repo: "00000star/clean-water-field-guide",
+      url: "https://github.com/00000star/clean-water-field-guide",
+      description: "Offline-capable humanitarian survival handbook and technical field guide for emergency water purification.",
+      tag: "Resilience & Impact",
+      language: "Offline Web / Docs",
+    },
+    {
+      id: "open-repair-atlas",
+      name: "open-repair-atlas",
+      repo: "00000star/open-repair-atlas",
+      url: "https://github.com/00000star/open-repair-atlas",
+      description: "Decentralized hardware diagnostics and repair knowledge atlas empowering grassroots local engineering.",
+      tag: "Open Hardware",
+      language: "Markdown / Schematics",
+    },
+  ] as ArsenalProject[],
 
   skills: [
     {
@@ -210,34 +272,35 @@ export const PROFILE = {
       organization: "Star King AI / Antigravity Autonomous Systems",
       location: "Harare & Cloud Edge",
       achievements: [
-        "Designed and deployed STARBOY PRIME, a 24/7 cloud GPU twin with autonomous auto-approval workflows.",
-        "Engineered Antigravity Mobile OS: a localized agentic control plane orchestrating full software engineering directly on Android.",
-        "Architected Liquid Coder: an autonomous coding agent achieving a 98.4% benchmark resolution rate via AST tree search.",
+        "Architected STARBOY PRIME: 24/7 cloud GPU twin on NVIDIA A10G with SQLite WAL TaskStore and monotonic SSE streaming.",
+        "Built Civilizationx: multi-agent AI survival simulator featuring 1k+ LOC agentic state logic and real-time tick engines.",
+        "Engineered paperclip-ai-companies: automated foundry for designing, scoring, and scaffolding autonomous AI enterprises.",
       ],
-      coreTech: ["Python 3.13", "TypeScript", "React", "Three.js", "CUDA", "FastAPI", "Termux"],
+      coreTech: ["Python 3.13", "TypeScript", "React", "Three.js", "CUDA", "FastAPI", "Docker"],
     },
     {
       period: "2023 — 2024",
-      role: "Full-Stack Machine Learning Engineer",
+      role: "Full-Stack AI & Edge Infrastructure Specialist",
       organization: "Autonomous Intelligence Lab",
-      location: "Remote",
+      location: "Remote / Harare",
       achievements: [
-        "Engineered high-throughput RAG systems indexing millions of domain-specific codebases with sub-150ms retrieval.",
+        "Created disaster-mesh-communications: offline-first resilient coordination PWA for zero-infrastructure power grid outages.",
+        "Developed AGI_engineering_forge and autonomous developer agent pipelines for automated codebase synthesis.",
         "Implemented real-time telemetry dashboards and streaming WebSocket/SSE pipelines for multi-agent clusters.",
-        "Scaled distributed inference pipelines across GPU clusters reducing compute costs by 45%.",
       ],
-      coreTech: ["Python", "FastAPI", "Vector DBs", "Docker", "Tailwind CSS", "PostgreSQL"],
+      coreTech: ["TypeScript", "PWA", "IndexedDB", "Python", "FastAPI", "Tailwind CSS"],
     },
     {
       period: "2022 — 2023",
-      role: "Systems & Embedded Software Specialist",
+      role: "Systems & Distributed Software Engineer",
       organization: "Advanced Computing Systems",
       location: "Harare, Zimbabwe",
       achievements: [
-        "Developed low-level assembly compilers and domain-specific visual programming interpreters.",
-        "Optimized embedded Linux kernels and edge micro-services for restricted battery and memory profiles.",
+        "Built localized AI solutions for emerging markets (zimsmeai-solutions) and open-access resilience tooling.",
+        "Authored open hardware and resilience frameworks (clean-water-field-guide, open-repair-atlas).",
+        "Optimized low-power edge micro-services for restricted battery and intermittent mobile network conditions.",
       ],
-      coreTech: ["C/C++", "Python", "Linux IPC", "Shell Scripting", "Embedded Systems"],
+      coreTech: ["C/C++", "Python", "Linux IPC", "Shell Scripting", "ServiceWorkers"],
     },
   ] as Milestone[],
 

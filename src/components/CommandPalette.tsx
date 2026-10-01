@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, Terminal, FolderKanban, Cpu, Gauge, Briefcase, Mail, Github, ExternalLink, X, Zap } from 'lucide-react';
+import { Search, Terminal, FolderKanban, Cpu, Gauge, Briefcase, Mail, Github, ExternalLink, X, Zap, Sparkles } from 'lucide-react';
 import { PROFILE } from '../data/profile';
 
 interface CommandPaletteProps {
@@ -38,11 +38,22 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose,
       id: 'projects',
       title: 'Explore Flagship Projects',
       category: 'Navigation',
-      description: 'View STARBOY PRIME, Antigravity Mobile OS, Liquid Coder & Mindustry',
+      description: 'View Civilizationx, STARBOY PRIME, paperclip-ai-companies & disaster-mesh',
       icon: <FolderKanban className="w-4 h-4 text-cyan-400" />,
       action: () => {
         onClose();
         onSelectAction('projects');
+      },
+    },
+    {
+      id: 'civilizationx',
+      title: 'Civilizationx Multi-Agent Sim',
+      category: 'Featured Repos',
+      description: 'AI Survival & Multi-Agent Civilization Simulator on GitHub',
+      icon: <Sparkles className="w-4 h-4 text-emerald-400" />,
+      action: () => {
+        window.open('https://github.com/00000star/Civilizationx', '_blank');
+        onClose();
       },
     },
     {
@@ -80,7 +91,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose,
     },
     {
       id: 'github',
-      title: 'Visit GitHub (Starboy001)',
+      title: 'Visit GitHub (@00000star)',
       category: 'External Links',
       description: 'Inspect open repositories and autonomous codebases',
       icon: <Github className="w-4 h-4 text-slate-300" />,

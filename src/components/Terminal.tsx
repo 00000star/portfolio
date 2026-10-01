@@ -17,6 +17,7 @@ interface CommandLog {
 const COMMANDS = [
   'help',
   'projects',
+  'arsenal',
   'about',
   'skills',
   'architecture',
@@ -96,11 +97,12 @@ export const Terminal: React.FC<TerminalProps> = ({ isOpen, onClose, onNavigateS
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1">
                 <div><span className="text-gold-300 font-bold">about</span> - Craig Zifunzi & core mission</div>
                 <div><span className="text-gold-300 font-bold">projects</span> - 4 Flagship sovereign architectures</div>
+                <div><span className="text-gold-300 font-bold">arsenal</span> - Open repository matrix (@00000star)</div>
                 <div><span className="text-gold-300 font-bold">skills</span> - AI/ML, Agentic loops & full-stack matrix</div>
                 <div><span className="text-gold-300 font-bold">architecture</span> - Distributed edge-to-cloud topology</div>
                 <div><span className="text-gold-300 font-bold">benchmarks</span> - 98.4% TCR & 140ms latency verification</div>
                 <div><span className="text-gold-300 font-bold">resume</span> - Career resume specification path</div>
-                <div><span className="text-gold-300 font-bold">github</span> - Direct link to GitHub Starboy001</div>
+                <div><span className="text-gold-300 font-bold">github</span> - Direct link to GitHub @00000star</div>
                 <div><span className="text-gold-300 font-bold">status</span> - Live A10G Cloud GPU telemetry</div>
                 <div><span className="text-gold-300 font-bold">contact</span> - Email & sovereign social links</div>
                 <div><span className="text-gold-300 font-bold">clear</span> - Flush terminal screen</div>
@@ -153,6 +155,37 @@ export const Terminal: React.FC<TerminalProps> = ({ isOpen, onClose, onNavigateS
           ),
         };
         if (onNavigateSection) onNavigateSection('projects');
+        break;
+
+      case 'arsenal':
+        outputLog = {
+          id: `out-${Date.now()}`,
+          type: 'output',
+          text: (
+            <div className="space-y-3 text-xs font-mono">
+              <div className="text-gold-400 font-bold">OPEN REPOSITORY ARSENAL (@00000star):</div>
+              {PROFILE.arsenal.map((a, idx) => (
+                <div key={idx} className="border-l-2 border-cyan-500/50 pl-3 py-0.5 space-y-0.5">
+                  <div className="flex items-center gap-2">
+                    <a
+                      href={a.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-cyan-300 font-bold underline hover:text-cyan-200"
+                    >
+                      {a.name}
+                    </a>
+                    <span className="text-[10px] px-1.5 rounded bg-obsidian-800 text-gold-300 border border-gold-500/30 font-mono">
+                      {a.tag}
+                    </span>
+                  </div>
+                  <div className="text-slate-400">{a.description}</div>
+                  <div className="text-slate-500 text-[11px]">{a.url}</div>
+                </div>
+              ))}
+            </div>
+          ),
+        };
         break;
 
       case 'skills':
@@ -427,7 +460,7 @@ export const Terminal: React.FC<TerminalProps> = ({ isOpen, onClose, onNavigateS
           <Sparkles className="w-3 h-3 text-gold-500" />
           <span>Quick:</span>
         </span>
-        {['help', 'projects', 'architecture', 'benchmarks', 'skills', 'resume', 'clear'].map((cmd) => (
+        {['help', 'projects', 'arsenal', 'architecture', 'benchmarks', 'skills', 'github', 'clear'].map((cmd) => (
           <button
             key={cmd}
             onClick={() => executeCommand(cmd)}

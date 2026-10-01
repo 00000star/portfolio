@@ -27,4 +27,6 @@ node node_modules/typescript/bin/tsc
 echo "==> Building production assets with Vite..."
 node node_modules/vite/bin/vite.js build
 
+touch "$DIR/dist/.nojekyll"
+
 echo "==> Production build completed successfully in $DIR/dist"

@@ -31,7 +31,7 @@ export const Benchmarks: React.FC = () => {
     {
       name: '3. AST Parser & Speculative Multi-Agent Planner',
       duration: 48,
-      description: 'Liquid Coder parses syntax trees, computes dependency DAGs, and generates self-healing patches.',
+      description: 'Civilizationx & agentic engines parse state DAGs, execute simulation ticks, and compute emergent patches.',
       status: 'pending',
     },
     {

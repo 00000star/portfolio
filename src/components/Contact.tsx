@@ -79,7 +79,7 @@ export const Contact: React.FC = () => {
                 <ArrowUpRight className="w-4 h-4 text-slate-500 group-hover:text-gold-400 transition-colors" />
               </div>
               <div className="text-sm font-bold text-white">GitHub</div>
-              <div className="text-xs font-mono text-slate-400 mt-0.5">@Starboy001</div>
+              <div className="text-xs font-mono text-slate-400 mt-0.5">@00000star</div>
             </a>
 
             <a

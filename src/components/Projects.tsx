@@ -168,6 +168,63 @@ export const Projects: React.FC = () => {
           );
         })}
       </div>
+
+      {/* Arsenal / Open-Source Repositories Grid */}
+      {PROFILE.arsenal && PROFILE.arsenal.length > 0 && (
+        <div className="mt-16 pt-12 border-t border-obsidian-800">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
+            <div>
+              <div className="flex items-center gap-2 text-xs font-mono font-semibold text-gold-400 uppercase tracking-widest mb-1">
+                <Layers className="w-4 h-4 text-gold-400" />
+                <span>Open Engineering Matrix</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                Arsenal & Open Repositories
+              </h3>
+            </div>
+            <a
+              href={PROFILE.github}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-obsidian-900 border border-obsidian-750 text-slate-300 hover:text-gold-300 hover:border-gold-500/30 text-xs font-mono transition-colors self-start sm:self-auto"
+            >
+              <Github className="w-4 h-4 text-gold-400" />
+              <span>Explore @00000star on GitHub</span>
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {PROFILE.arsenal.map((repo) => (
+              <a
+                key={repo.id}
+                href={repo.url}
+                target="_blank"
+                rel="noreferrer"
+                className="group p-5 rounded-xl bg-obsidian-900/60 border border-obsidian-800 hover:border-gold-500/40 backdrop-blur-sm transition-all flex flex-col justify-between hover:shadow-gold-sm"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-2.5">
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-gold-500/10 border border-gold-500/30 text-gold-400 uppercase">
+                      {repo.tag}
+                    </span>
+                    <ExternalLink className="w-3.5 h-3.5 text-slate-500 group-hover:text-gold-400 transition-colors" />
+                  </div>
+                  <h4 className="text-base font-bold text-white group-hover:text-gold-300 transition-colors font-mono">
+                    {repo.name}
+                  </h4>
+                  <p className="text-xs text-slate-400 mt-2 leading-relaxed">
+                    {repo.description}
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-obsidian-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                  <span className="text-cyan-400">{repo.language}</span>
+                  <span className="text-slate-400 group-hover:text-slate-200">github.com/{repo.repo} →</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 };

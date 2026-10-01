@@ -106,9 +106,9 @@ export const Canvas3D: React.FC<Canvas3DProps> = () => {
     // 4 Orbiting Holographic Beacons
     const beaconData = [
       { name: 'STARBOY PRIME (A10G Cloud)', radius: 3.2, speed: 0.6, color: 0xf59e0b, yOffset: 0.8 },
-      { name: 'Antigravity Mobile OS (Edge)', radius: 4.1, speed: -0.45, color: 0x10b981, yOffset: -0.4 },
-      { name: 'Liquid Coder (Autonomous LLM)', radius: 3.6, speed: 0.52, color: 0x38bdf8, yOffset: 0.3 },
-      { name: 'Mindustry MLOG (Logic RAG)', radius: 4.6, speed: -0.38, color: 0xeab308, yOffset: -0.9 },
+      { name: 'Civilizationx (Multi-Agent Sim)', radius: 4.1, speed: -0.45, color: 0x10b981, yOffset: -0.4 },
+      { name: 'paperclip-ai-companies (Foundry)', radius: 3.6, speed: 0.52, color: 0x38bdf8, yOffset: 0.3 },
+      { name: 'disaster-mesh-communications (Mesh PWA)', radius: 4.6, speed: -0.38, color: 0xeab308, yOffset: -0.9 },
     ];
 
     const beaconMeshes: {
@@ -366,9 +366,9 @@ export const Canvas3D: React.FC<Canvas3DProps> = () => {
           <span>{freeLook ? 'FREE-LOOK ACTIVE (DRAG/SCROLL)' : 'FREE-LOOK 3D'}</span>
         </button>
 
-        <div className="hidden sm:flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-obsidian-900/80 backdrop-blur-md border border-obsidian-800 text-[11px] font-mono text-slate-400">
+        <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-obsidian-900/80 backdrop-blur-md border border-obsidian-800 text-[11px] font-mono text-slate-400">
           <Compass className="w-3 h-3 text-gold-500" />
-          <span>4 SATELLITES IN ORBIT</span>
+          <span>4 SATELLITES: STARBOY • CIVILIZATIONX • PAPERCLIP • DISASTER-MESH</span>
         </div>
       </div>
     </div>
