@@ -1,0 +1,30 @@
+{
+  "name": "star-king-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "bash -c 'export ESBUILD_BINARY_PATH=/tmp/esbuild NODE_PATH=/tmp/node_modules; node node_modules/vite/bin/vite.js'",
+    "build": "bash build.sh",
+    "preview": "bash -c 'export ESBUILD_BINARY_PATH=/tmp/esbuild NODE_PATH=/tmp/node_modules; node node_modules/vite/bin/vite.js preview'"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.395.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.3.0",
+    "three": "^0.165.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/three": "^0.165.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.4.5",
+    "vite": "^5.3.1"
+  }
+}
